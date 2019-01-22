@@ -1,20 +1,20 @@
 public class Cappuccino extends Coffee{
-    private double price;
 
     public Cappuccino(){
-        super("Cappuccino", 10.00, CupSize.small);
+        super("Cappuccino");
     }
 
     public Cappuccino(CupSize size){
         super("Cappuccino", size);
-        this.price = setPrice(size);
+        toPrice(size);
     }
 
-    public Cappuccino(double price, CupSize size){
-        super("Cappuccino", price, size);
-    }
+//    public Cappuccino(double price, CupSize size){
+//        super("Cappuccino", price, size);
+//    }
 
-    public double setPrice(CupSize size){
+    public double toPrice(CupSize size){
+        double price = 0.00;
         switch(size){
             case small: price = 10.00; break;
             case medium: price = 15.00; break;
@@ -22,9 +22,5 @@ public class Cappuccino extends Coffee{
             default: System.out.println("Choose the correct size");
         }
         return price;
-    }
-
-    public void toOrder(){
-        System.out.println("You ordered a " + getSize() + " cup of " + getName() + ", you have to pay " + price + " dollars.");
     }
 }

@@ -1,20 +1,19 @@
 public class Latte extends Coffee{
-    private double price;
-
     public Latte(){
-        super("Latte", 10.00, CupSize.small);
+        super("Latte");
     }
 
     public Latte(CupSize size){
         super("Latte", size);
-        this.price = setPrice(size);
+        toPrice(size);
     }
 
-    public Latte(double price, CupSize size){
-        super("Latte", price, size);
-    }
+//    public Latte(double price, CupSize size){
+//        super("Latte", price, size);
+//    }
 
-    public double setPrice(CupSize size){
+    public double toPrice(CupSize size){
+        double price = 0.00;
         switch(size){
             case small: price = 10.00; break;
             case medium: price = 15.00; break;
@@ -22,9 +21,5 @@ public class Latte extends Coffee{
             default: System.out.println("Choose the correct size");
         }
         return price;
-    }
-    
-    public void toOrder(){
-        System.out.println("You ordered a " + getSize() + " cup of " + getName() + ", you have to pay " + price + " dollars.");
     }
 }

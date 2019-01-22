@@ -1,20 +1,21 @@
 public class Espresso extends Coffee{
-    private double price;
+//    private double price;
 
     public Espresso(){
-        super("Espresso", 11.50, CupSize.small);
+        super("Espresso");
     }
 
     public Espresso(CupSize size){
         super("Espresso", size);
-        this.price = setPrice(size);
+        toPrice(size);
     }
 
-    public Espresso(double price, CupSize size){
-        super("Espresso", price, size);
-    }
+//    public Espresso(double price, CupSize size){
+//        super("Espresso", price, size);
+//    }
 
-    public double setPrice(CupSize size){
+    public double toPrice(CupSize size){
+        double price = 0.00;
         switch(size){
             case small: price = 11.50; break;
             case medium: price = 16.50; break;
@@ -22,9 +23,5 @@ public class Espresso extends Coffee{
             default: System.out.println("Choose the correct size");
         }
         return price;
-    }
-
-    public void toOrder(){
-        System.out.println("You ordered a " + getSize() + " cup of " + getName() + ", you have to pay " + price + " dollars.");
     }
 }

@@ -1,20 +1,20 @@
 public class Americano extends Coffee{
-    private double price;
 
     public Americano(){
-        super("Americano", 8.50, CupSize.small);
+        super("Americano");
     }
 
     public Americano(CupSize size){
         super("Americano", size);
-        this.price = setPrice(size);
+        toPrice(size);
     }
 
-    public Americano(double price, CupSize size){
-        super("Americano", price, size);
-    }
+//    public Americano(double price, CupSize size){
+//        super("Americano", price, size);
+//    }
 
-    public double setPrice(CupSize size){
+    public double toPrice(CupSize size){
+        double price = 0.00;
         switch(size){
             case small: price = 8.50; break;
             case medium: price = 12.50; break;
@@ -22,9 +22,5 @@ public class Americano extends Coffee{
             default: System.out.println("Choose the correct size");
         }
         return price;
-    }
-
-    public void toOrder(){
-        System.out.println("You ordered a " + getSize() + " cup of " + getName() + ", you have to pay " + price + " dollars.");
     }
 }
