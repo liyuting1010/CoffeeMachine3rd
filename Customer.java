@@ -27,7 +27,7 @@ public class Customer{
         }
     }
 
-    public double getExpense(){
-        return expense;
-    }
+//    public double getExpense(){
+//        return expense;
+//    }
 }

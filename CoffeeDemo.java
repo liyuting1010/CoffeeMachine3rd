@@ -15,7 +15,7 @@ public class CoffeeDemo {
             customer.payOrder();
             customer.toDrink();
         }catch(InsufficientPaidException e){
-            System.out.println("Sorry, but you are short " + e.getExpense());
+            System.out.println("Sorry, but you are short " + e.getExpense() + " dollars.");
         }
     }
 }

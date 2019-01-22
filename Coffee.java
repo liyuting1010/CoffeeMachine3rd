@@ -3,14 +3,14 @@ public abstract class Coffee {
     private double price;
     private CupSize size;
 
-    public Coffee(String name){
-        this(name, CupSize.small);
-    }
+//    public Coffee(String name){
+//        this(name, CupSize.small);
+//    }
 
     public Coffee(String name, CupSize size){
         this.name = name;
         this.size = size;
-        this.price = toPrice(size);
+        this.price = getPrice();
         toOrder();
     }
 //
@@ -29,10 +29,8 @@ public abstract class Coffee {
         return size;
     }
 
-    public double getPrice() { return price; }
-
     public void toOrder(){
         System.out.println("A " + size + " cup of " + name + ", " + price + " dollars.");
     }
-    public abstract double toPrice(CupSize size);
+    public abstract double getPrice();
 }

@@ -3,8 +3,6 @@ public class OrderList {
     private CupSize[] coffeeSize;
     private double[] coffeePrice;
 
-    public OrderList(){
-    }
     public OrderList(Coffee[] coffeeList){
         getList(coffeeList);
         System.out.println("Total cost: " + getTotalPrice() + " dollars.");
@@ -31,9 +29,9 @@ public class OrderList {
     public CupSize[] getSizeList(){
         return coffeeSize;
     }
-    public double[] getPriceList(){
-        return coffeePrice;
-    }
+//    public double[] getPriceList(){
+//        return coffeePrice;
+//    }
 
     public double getTotalPrice(){
         double totalPrice = 0.00;
