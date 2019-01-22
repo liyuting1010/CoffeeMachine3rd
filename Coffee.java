@@ -1,6 +1,6 @@
 public abstract class Coffee {
     private String name;
-    private double price;
+//    private double price;
     private CupSize size;
 
 //    public Coffee(String name){
@@ -10,7 +10,6 @@ public abstract class Coffee {
     public Coffee(String name, CupSize size){
         this.name = name;
         this.size = size;
-        this.price = getPrice();
         toOrder();
     }
 //
@@ -30,7 +29,7 @@ public abstract class Coffee {
     }
 
     public void toOrder(){
-        System.out.println("A " + size + " cup of " + name + ", " + price + " dollars.");
+        System.out.println("A " + size + " cup of " + name + ", " + getPrice() + " dollars.");
     }
     public abstract double getPrice();
 }
