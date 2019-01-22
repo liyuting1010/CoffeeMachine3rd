@@ -6,17 +6,23 @@ public class Customer{
         try{
             this.order = order;
             this.expense = expense;
-            setPay(order);
+            setPay();
         }catch (InsufficientPaidException e){
             System.out.println("Sorry, but you are short " + e.getExpense());
+            this.order = new OrderList();
         }
     }
 
-    public void setPay(OrderList order) throws InsufficientPaidException{
+    public double getPrice(){
         double totalPrice = 0.00;
         for(int i = 0; i < order.getPriceList().length; i++){
             totalPrice += order.getPriceList()[i];
         }
+        return totalPrice;
+    }
+
+    public void setPay() throws InsufficientPaidException{
+        double totalPrice = getPrice();
         if(expense >= totalPrice){
             double changes = expense - totalPrice;
             System.out.println("Give you a change of " + changes + " dollars.");
@@ -27,13 +33,17 @@ public class Customer{
         }
     }
 
-    public void toDrink(){
-        int i = 0;
-        String[] nameList = order.getNameList();
-        CupSize[] sizeList = order.getSizeList();
-        for(String name : nameList){
-            System.out.println("There is your " + sizeList[i].toString() + " cup of " + nameList[i] + ".");
-            i ++;
+    public void toDrink() throws NullPointerException{
+        if(order != null){
+            int i = 0;
+            String[] nameList = order.getNameList();
+            CupSize[] sizeList = order.getSizeList();
+            for(String name : nameList){
+                System.out.println("There is your " + sizeList[i].toString() + " cup of " + nameList[i] + ".");
+                i ++;
+            }
+        }else{
+            throw new NullPointerException();
         }
     }
 

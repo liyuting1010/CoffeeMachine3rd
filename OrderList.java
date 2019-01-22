@@ -3,6 +3,8 @@ public class OrderList {
     private CupSize[] coffeeSize;
     private double[] coffeePrice;
 
+    public OrderList(){
+    }
     public OrderList(Coffee[] coffeeList){
         getList(coffeeList);
     }
