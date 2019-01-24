@@ -1,16 +1,7 @@
 public class Latte extends Coffee{
-//    public Latte(){
-//        super("Latte");
-//    }
-
     public Latte(CupSize size){
         super("Latte", size);
     }
-
-//    public Latte(double price, CupSize size){
-//        super("Latte", price, size);
-//    }
-
     public double getPrice(){
         double price = 0.00;
         switch(getSize()){

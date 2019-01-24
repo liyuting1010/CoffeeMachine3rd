@@ -1,16 +1,7 @@
 public class Cappuccino extends Coffee{
-
-//    public Cappuccino(){
-//        super("Cappuccino");
-//    }
-
     public Cappuccino(CupSize size){
         super("Cappuccino", size);
     }
-
-//    public Cappuccino(double price, CupSize size){
-//        super("Cappuccino", price, size);
-//    }
 
     public double getPrice(){
         double price = 0.00;

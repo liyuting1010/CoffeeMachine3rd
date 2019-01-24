@@ -1,17 +1,7 @@
 public class Americano extends Coffee{
-
-//    public Americano(){
-//        super("Americano");
-//    }
-
     public Americano(CupSize size){
         super("Americano", size);
     }
-
-//    public Americano(double price, CupSize size){
-//        super("Americano", price, size);
-//    }
-
     public double getPrice(){
         double price = 0.00;
         switch(getSize()){

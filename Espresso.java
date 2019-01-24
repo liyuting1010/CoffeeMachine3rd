@@ -1,17 +1,7 @@
 public class Espresso extends Coffee{
-//    private double price;
-
-//    public Espresso(){
-//        super("Espresso");
-//    }
-
     public Espresso(CupSize size){
         super("Espresso", size);
     }
-
-//    public Espresso(double price, CupSize size){
-//        super("Espresso", price, size);
-//    }
 
     public double getPrice(){
         double price = 0.00;
